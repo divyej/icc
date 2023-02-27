@@ -2,8 +2,14 @@ import Button from "./Button";
 import { FaEthereum } from "react-icons/fa";
 import Marquee from "react-fast-marquee";
 import data from "../data/item-nft.js";
+import Buy from "./buy"
+import Footer from "./Footer";
+import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default function Collections() {
+  let navigate=  useNavigate()
+
   return (
     <>
       <div
@@ -36,7 +42,12 @@ export default function Collections() {
                   <div className="flex justify-between items-center">
                     <p className="text-tertiary font-bold">{item.price} ETH</p>
                     <div className="bg-secondary p-2 rounded-full">
-                      <FaEthereum color="#ECDBBA" size="1rem" />
+                     
+                     <FaEthereum color="#ECDBBA" size="1rem" onClick={() => {
+                navigate("/buy");
+              }}/>
+                     
+                  
                     </div>
                   </div>
                 </div>
@@ -76,8 +87,12 @@ export default function Collections() {
                   <div className="flex justify-between items-center">
                     <p className="text-tertiary font-bold">{item.price} ETH</p>
                     <div className="bg-secondary p-2 rounded-full">
-                      <FaEthereum color="#ECDBBA" size="1rem" />
+                      
+                      <FaEthereum color="#ECDBBA" size="1rem" onClick={() => {
+                navigate("/buy");
+              }}  />
                     </div>
+
                   </div>
                 </div>
               </div>
@@ -116,7 +131,9 @@ export default function Collections() {
                   <div className="flex justify-between items-center">
                     <p className="text-tertiary font-bold">{item.price} ETH</p>
                     <div className="bg-secondary p-2 rounded-full">
-                      <FaEthereum color="#ECDBBA" size="1rem" />
+                      <FaEthereum color="#ECDBBA" size="1rem" onClick={() => {
+                navigate("/buy");
+              }} />
                     </div>
                   </div>
                 </div>
